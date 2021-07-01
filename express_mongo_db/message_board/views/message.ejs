@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="/board.css"> 
+</head>
+<body>
+    <div id="container">
+        <header>
+            <a href="/user">Login</a>
+            <h1>Welcome <%= user.first_name %></h1>
+        </header>
+        <div id="post_message">
+            <% if (messages) { %>
+                <%for (let key in messages) { %>
+                    <%= messages[key] %>
+                <% } %>
+            <% } %>
+            <h3>Post Message</h3>
+            <form action="/message/create" method="POST">
+                <p><textarea name="message" placeholder="Write Message Here" cols="75" rows="5"></textarea></p>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div id="messages">
+            <% if (posts.length) { %>
+                <% for (let post of posts) { %>
+            <h3>Message</h3>
+            <p>Name: <%= post.name %></p> 
+            <p>Message: <%= post.message %></p>
+            <a href="/message/destroy/<%= post.id %>">Delete Message</a>
+            <div id="comment">
+                <h4>Comments</h4>
+                    <% for (let comment of post.comments) { %>
+                <p>Name: <%= comment.name %></p>
+                <p>Comment: <%= comment.comment %></p>
+                <p><a href="/comment/destroy/<%= post.id %>/<%= comment.id %>">Delete Comment</a></p>
+                <% } %>
+                <h3>Post Comment</h3>
+                <form action="/comment/create/<%= post.id %>" method="POST">
+                    <p><textarea name="comment"cols="80" rows="3" placeholder="Write Comment here"></textarea></p>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+                <% } %>
+            <% } %>
+        </div>
+    </div>      
+</body>
+</html>

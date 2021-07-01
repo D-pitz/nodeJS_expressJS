@@ -1,0 +1,1 @@
+Message board app with user login and registration with validations. Password is encrypted using bcrypt.

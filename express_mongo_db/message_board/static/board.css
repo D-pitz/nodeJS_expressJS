@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    color: rgb(172, 172, 172);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    background-color: black;
+}
+
+#container{
+    margin: auto;
+    width: 1080px;
+    background: linear-gradient(#646368,#383838);
+    padding: 15px;
+}
+
+header {
+    color: rgba(255, 0, 0, 0.733);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom-color: red;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+h1 { 
+    color: red;
+}
+
+#post_message{
+    color: red;
+}
+
+#messages{
+    border-color: red;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 50px;
+    margin-top: 15px;
+}
+
+#comment{
+    border-color: lightgrey;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 50px;
+    margin-top: 15px;
+}
+
+textarea{
+    border-radius: 10px;
+}
+
+button {
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: rgb(231, 90, 90);
+    color: whitesmoke;
+}
+

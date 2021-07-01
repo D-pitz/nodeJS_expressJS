@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add A Quote</h1>
+    <% if (messages) { %>
+        <ul>
+        <%for (let key in messages) { %>
+            <li><%= messages[key] %></li>
+        <% } %>
+        </ul>
+    <% } %>
+    <form action="/quotes" method="POST">
+    <p>Your name: <input type="text" name="name"></p>
+    <p>Your quote: <textarea name="quote" id="" cols="30" rows="10"></textarea></p>
+    <button type="submit">Add my quote</button>
+    </form>
+    <form action="/quotes">
+    <button type="submit">Go to Quotes</button>
+    </form>
+</body>
+</html>

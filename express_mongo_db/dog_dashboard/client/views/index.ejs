@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><a href="/dogs/new">Submit a New Dog</a></p>
+    <h1>Dogs</h1>
+    <% if (dogs) { %>
+        <% for (let dog of dogs) { %>
+            <p><a href="/dogs/<%= dog._id %>"><%= dog.name %></a></p>
+            <p><a href="/dogs/<%= dog._id %>/edit">Edit Dog</a></p>
+            <p><img src="/<%= dog.name %>.jpg" alt="#"></p>
+        <% } %>
+    <% } %>
+</body>
+</html>
