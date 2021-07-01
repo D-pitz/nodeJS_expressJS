@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+   <div id="form">
+        <form action="/process" method="POST">
+            <h1>Form</h1>
+            <p>Your Name: <input type="text" name="name"></p>
+            <p>Dojo Location: <select name="location">
+                <option value="Dallas">Dallas</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Seattle">Seattle</option>
+            </select></p>
+            <p>Favorite Language: <select name="language">
+                <option value="JS">JS</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="Ruby">Ruby</option>
+            </select></p>
+            <p>Comment <textarea name="comment" id="" cols="30" rows="10"></textarea></p>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
